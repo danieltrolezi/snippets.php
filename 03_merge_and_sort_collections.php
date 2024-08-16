@@ -85,7 +85,7 @@ class PostsRepository
 
 $repository = new PostsRepository();
 print_r(
-  $repository->getPostsAndComments()
+	$repository->getPostsAndComments()
 );
 
 ?>

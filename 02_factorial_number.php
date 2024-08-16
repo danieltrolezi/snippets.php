@@ -13,30 +13,30 @@
 
 function solution($arr): int
 {
-  list($boys, $girls, $pairs) = $arr;
+    list($boys, $girls, $pairs) = $arr;
 
-  $halfPairs = $pairs / 2;
-  //echo "halfPairs: $halfPairs" . PHP_EOL;
+    $halfPairs = $pairs / 2;
+    //echo "halfPairs: $halfPairs" . PHP_EOL;
 
-  $boysCombinations = getCombinations($boys, $halfPairs);
-  //echo "boysCombinations: $boysCombinations" . PHP_EOL;
+    $boysCombinations = getCombinations($boys, $halfPairs);
+    //echo "boysCombinations: $boysCombinations" . PHP_EOL;
 
-  $girlsCombinations = getCombinations($girls, $halfPairs);
-  //echo "girlsCombinations: $girlsCombinations" . PHP_EOL;
+    $girlsCombinations = getCombinations($girls, $halfPairs);
+    //echo "girlsCombinations: $girlsCombinations" . PHP_EOL;
 
-  return $boysCombinations * $girlsCombinations * $halfPairs;
+    return $boysCombinations * $girlsCombinations * $halfPairs;
 }
 
 function getCombinations(int $n, int $k){
-	return factorial($n) / (factorial($k) * factorial($n - $k));
+    return factorial($n) / (factorial($k) * factorial($n - $k));
 }
 
 function factorial(int $n) {
-	if ($n === 0 || $n === 1) {
-    	return 1;
-	}
+    if ($n === 0 || $n === 1) {
+        return 1;
+    }
 
-	return $n * factorial($n - 1);
+    return $n * factorial($n - 1);
 }
 
 // keep this function call here  
